@@ -1,0 +1,26 @@
+<h2>Login</h2>
+
+<%= if flash = get_flash(@conn, :error) do %>
+  <p style="color: red; font-weight: bold;"><%= flash %></p>
+<% end %>
+
+<%= form_for @conn, Routes.session_path(@conn, :create), [as: :session], fn f -> %>
+  <div>
+    <%= label f, :email %><br>
+    <%= email_input f, :email, required: true, placeholder: "Enter your email" %>
+  </div>
+
+  <div>
+    <%= label f, :password %><br>
+    <%= password_input f, :password, required: true, placeholder: "Enter your password" %>
+  </div>
+
+  <div style="margin-top: 10px;">
+    <%= submit "Log In", class: "btn btn-primary" %>
+  </div>
+<% end %>
+
+<p style="margin-top: 15px;">
+  Don't have an account?
+  <a href="<%= Routes.user_path(@conn, :new) %>">Register here</a>
+</p>

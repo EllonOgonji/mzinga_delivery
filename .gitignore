@@ -1,0 +1,14 @@
+# Elixir build
+/_build
+/deps
+*.ez
+
+# Node.js
+/node_modules
+
+# Environment variables
+.env
+
+# Editor files
+*.swp
+*.swo
