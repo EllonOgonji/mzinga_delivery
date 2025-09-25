@@ -3,10 +3,10 @@ defmodule MzingaDelivery.Accounts.User do
   import Ecto.Changeset
 
   schema "users" do
-    field :name, :string
+    field :username, :string
     field :email, :string
-    field :password, :string, virtual: true   # virtual, not stored in DB
-    field :password_hash, :string             # stored in DB
+    field :password, :string, virtual: true
+    field :password_hash, :string
     field :role, :string, default: "customer"
 
     timestamps(type: :utc_datetime)
@@ -17,8 +17,8 @@ defmodule MzingaDelivery.Accounts.User do
   @doc false
   def changeset(user, attrs) do
     user
-    |> cast(attrs, [:name, :email, :password, :role])
-    |> validate_required([:name, :email, :password, :role])
+    |> cast(attrs, [:username, :email, :password, :role])
+    |> validate_required([:username, :email, :password, :role])
     |> unique_constraint(:email)
     |> validate_inclusion(:role, @valid_roles)
     |> put_password_hash()

@@ -13,7 +13,10 @@ defmodule MzingaDeliveryWeb.Plugs.AuthenticateUser do
         conn
         |> put_flash(:error, "You must be logged in to access this page")
         |> redirect(to: Routes.session_path(conn, :new))
+        #|>redirect(conn,to: "/login")
         |> halt()
+
+
 
       user_id ->
         user = Accounts.get_user!(user_id)

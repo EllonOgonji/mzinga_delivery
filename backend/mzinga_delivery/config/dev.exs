@@ -3,9 +3,10 @@ import Config
 # Configure your database
 config :mzinga_delivery, MzingaDelivery.Repo,
   username: "mzinga_user",
-  password: "MzingaSecure2024!",
+  password: "mzingaKali$",
   hostname: "localhost",
   database: "mzinga_delivery_dev",
+  port: 5432,
   stacktrace: true,
   show_sensitive_data_on_connection_error: true,
   pool_size: 10

@@ -25,11 +25,12 @@ defmodule MzingaDeliveryWeb.Router do
   scope "/", MzingaDeliveryWeb do
     pipe_through :browser
 
-    get "/", PageController, :index             # Home page
+    get "/", HomeController, :index
+   # get "/", PageController, :index             # Home page
     get "/login", SessionController, :new      # Login page
     post "/login", SessionController, :create  # Login submission
-    get "/register", UserController, :new      # Registration page
-    post "/register", UserController, :create  # Create user
+   # get "/register", UserController, :new      # Registration page
+    #post "/register", UserController, :create  # Create user
   end
 
   # --------------------------
@@ -39,8 +40,8 @@ defmodule MzingaDeliveryWeb.Router do
     pipe_through [:browser, :require_authenticated_user]
 
     delete "/logout", SessionController, :delete  # Logout
-    get "/dashboard", DashboardController, :index # Dashboard for logged-in users
-    get "/profile", UserController, :show         # User profile page
+   # get "/dashboard", DashboardController, :index # Dashboard for logged-in users
+   # get "/profile", UserController, :show         # User profile page
     # Add more protected routes here
   end
 
