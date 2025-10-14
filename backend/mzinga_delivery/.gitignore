@@ -17,6 +17,8 @@ erl_crash.dump
 *.secret.exs
 .env
 .env.*
+.env.local
+.env.production
 config/*.secret.exs
 
 # ==========================

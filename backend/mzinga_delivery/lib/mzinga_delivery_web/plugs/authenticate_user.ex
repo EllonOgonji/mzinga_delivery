@@ -3,7 +3,7 @@ defmodule MzingaDeliveryWeb.Plugs.AuthenticateUser do
   import Phoenix.Controller
 
   alias MzingaDelivery.Accounts
-  alias MzingaDeliveryWeb.Router.Helpers, as: Routes
+  #alias MzingaDeliveryWeb.Router.Helpers, as: Routes
 
   def init(default), do: default
 
@@ -12,8 +12,8 @@ defmodule MzingaDeliveryWeb.Plugs.AuthenticateUser do
       nil ->
         conn
         |> put_flash(:error, "You must be logged in to access this page")
-        |> redirect(to: Routes.session_path(conn, :new))
-        #|>redirect(conn,to: "/login")
+        #|> redirect(to: Routes.session_path(conn, :new))
+        |>redirect(to: "/login")
         |> halt()
 
 

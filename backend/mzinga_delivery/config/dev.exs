@@ -1,16 +1,13 @@
 import Config
 
-# Configure your database
 config :mzinga_delivery, MzingaDelivery.Repo,
   username: "mzinga_user",
   password: "mzingaKali$",
   hostname: "localhost",
   database: "mzinga_delivery_dev",
-  port: 5432,
   stacktrace: true,
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
-
 # For development, we disable any cache and enable
 # debugging and code reloading.
 #

@@ -7,6 +7,11 @@
 # General application configuration
 import Config
 
+# Load .env file in development
+#if File.exists?(".env") and Mix.env() != :prod do
+ # DotenvParser.load_file(".env")
+#end
+
 config :mzinga_delivery,
   ecto_repos: [MzingaDelivery.Repo],
   generators: [timestamp_type: :utc_datetime]
